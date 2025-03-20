@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Schedule Viewer</title>
+    <link rel="stylesheet" href="../css/schedule.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weekly Schedule</h1>
+            <div class="user-info">
+                <div class="student-name" id="studentName">Loading...</div>
+                <button class="logout-btn" id="logout">Logout</button>
+            </div>
+            
+        </header>
+
+        <div class="student-info">
+            <div class="info-card">
+                <h3>Roll Number</h3>
+                <div id="rollNumber">Loading...</div>
+            </div>
+            <div class="info-card">
+                <h3>Total Courses</h3>
+                <div id="totalCourses">Loading...</div>
+            </div>
+        </div>
+
+        <div id="errorContainer"></div>
+
+        <div id="loadingIndicator" class="loading">Loading your schedule...</div>
+
+        <div class="schedule-container" id="scheduleContainer" style="display: none;">
+            <div class="day-column">
+                <div class="day-header">Monday</div>
+                <div class="course-list" id="mondayCourses"></div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Tuesday</div>
+                <div class="course-list" id="tuesdayCourses"></div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Wednesday</div>
+                <div class="course-list" id="wednesdayCourses"></div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Thursday</div>
+                <div class="course-list" id="thursdayCourses"></div>
+            </div>
+            <div class="day-column">
+                <div class="day-header">Friday</div>
+                <div class="course-list" id="fridayCourses"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/schedule.js"></script>
+</body>
+</html>

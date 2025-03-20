@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration System</title>
+  <link rel="stylesheet" href="../css/registration.css">
+</head>
+<body>
+  <!-- Main App Page -->
+  <div id="app-page">
+    <header>
+      <nav>
+        <div class="logo">CourseRegistraion</div>
+        <div class="user-info">
+          <span class="user-name" id="student-name">Student Name</span>
+          <button id="logout-btn" class="btn-danger">Logout</button>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="student-selector" id="adminSearch">
+      <label for="student-select">Select Student:</label>
+      <select id="student-select" class="filter-input">
+        <option value="">Select a student...</option>
+        <!-- Student options will be added dynamically -->
+      </select>
+    </div>
+    <div class="container">
+      <div id="messages">
+        <div id="error-message" class="error-message hidden"></div>
+        <div id="success-message" class="success-message hidden"></div>
+      </div>
+
+      <div class="main-content">
+        <!-- Available Courses Section -->
+        <div class="courses-container">
+          <h2 class="section-title">Available Courses</h2>
+
+          <div class="filter-container">
+            <input type="text" id="course-search" class="filter-input" placeholder="Search courses...">
+            <select id="department-filter" class="filter-input">
+              <option value="">All Departments</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+            </select>
+            <select id="time-filter" class="filter-input">
+              <option value="">Any Time</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+            </select>
+          </div>
+
+          <div id="available-courses" class="course-list">
+            <div class="loading">Loading available courses...</div>
+          </div>
+        </div>
+
+        <!-- Registered Courses Section -->
+        <div class="registered-container">
+          <h2 class="section-title">My Registered Courses</h2>
+          <div id="registered-courses" class="course-list">
+            <div class="loading">Loading your registered courses...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/registration.js"></script>
+</body>
+</html>

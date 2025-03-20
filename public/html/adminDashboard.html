@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management System - Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Dashboard</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item active" data-section="dashboard">
+                    <i>📊</i> Dashboard
+                </div>
+                <div class="menu-item" data-section="course-students">
+                    <i>👥</i> Students by Course
+                </div>
+                <div class="menu-item" data-section="available-courses">
+                    <i>📚</i> Available Courses
+                </div>
+                <div class="menu-item" data-section="missing-prerequisites">
+                    <i>⚠️</i> Missing Prerequisites
+                </div>
+                <div class="menu-item" data-section="all-students">
+                    <i>🎓</i> All Students
+                </div>
+                <div class="menu-item" data-section="all-courses">
+                    <i>📝</i> All Courses
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <button class="course-management" id="courseManage">Course Management</button>
+                <div class="user-info">
+                    <span id="admin">Admin</span>&nbsp;&nbsp;&nbsp;
+                    <img src="../images/admin.jpg" alt="Admin Profile">
+                    
+                </div>
+            </div>
+
+            <!-- Dashboard Overview -->
+            <div class="report-section active" id="dashboard">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                </div>
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-title">Total Students</div>
+                        <div class="card-value" id="total-students">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Total Courses</div>
+                        <div class="card-value" id="total-courses">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Available Seats</div>
+                        <div class="card-value" id="available-seats">-</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Missing Prerequisites</div>
+                        <div class="card-value" id="missing-prerequisites-count">-</div>
+                    </div>
+                </div>
+                <div class="report-section-preview">
+                    <h3>Quick Reports</h3>
+                    <p>Select a report from the sidebar to view detailed information.</p>
+                </div>
+            </div>
+
+            <!-- Students by Course Section -->
+            <div class="report-section" id="course-students">
+                <div class="section-header">
+                    <h2>Students by Course</h2>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-control">
+                        <select id="course-select">
+                            <option value="">Select Course</option>
+                        </select>
+                    </div>
+                    <div class="filter-control">
+                        <button id="fetch-course-students">Generate Report</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="table-container">
+                    <table id="course-students-table">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <!-- <th>Email</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="course-students-empty">
+                        <i>📊</i>
+                        <p>Select a course to view registered students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Courses Section -->
+            <div class="report-section" id="available-courses">
+                <div class="section-header">
+                    <h2>Available Courses</h2>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-control">
+                        <button id="fetch-available-courses">Generate Report</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="table-container">
+                    <table id="available-courses-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Title</th>
+                                <th>Instructor</th>
+                                <th>Available Seats</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="available-courses-empty">
+                        <i>📊</i>
+                        <p>Click "Generate Report" to view available courses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing Prerequisites Section -->
+            <div class="report-section" id="missing-prerequisites">
+                <div class="section-header">
+                    <h2>Students Missing Prerequisites</h2>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-control">
+                        <button id="fetch-missing-prerequisites">Generate Report</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="table-container">
+                    <table id="missing-prerequisites-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Roll Number</th>
+                                <th>Missing Course</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="missing-prerequisites-empty">
+                        <i>📊</i>
+                        <p>Click "Generate Report" to view students missing prerequisites</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Students Section -->
+            <div class="report-section" id="all-students">
+                <div class="section-header">
+                    <h2>All Students</h2>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-control">
+                        <input type="text" id="student-search" placeholder="Search by name or roll number...">
+                    </div>
+                    <div class="filter-control">
+                        <button id="fetch-all-students">Generate Report</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="table-container">
+                    <table id="all-students-table">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <!-- <th>Email</th> -->
+                                <th>Registered Courses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="all-students-empty">
+                        <i>📊</i>
+                        <p>Click "Generate Report" to view all students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Courses Section -->
+            <div class="report-section" id="all-courses">
+                <div class="section-header">
+                    <h2>All Courses</h2>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-control">
+                        <input type="text" id="course-search" placeholder="Search by title or code...">
+                    </div>
+                    <div class="filter-control">
+                        <select id="department-filter">
+                            <option value="">All Departments</option>
+                        </select>
+                    </div>
+                    <div class="filter-control">
+                        <button id="fetch-all-courses">Generate Report</button>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="table-container">
+                    <table id="all-courses-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Title</th>
+                                <th>Instructor</th>
+                                <th>Department</th>
+                                <th>Level</th>
+                                <th>Available Seats</th>
+                                <th>Schedule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="all-courses-empty">
+                        <i>📊</i>
+                        <p>Click "Generate Report" to view all courses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

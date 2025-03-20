@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student/Admin Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="student-tab">Student Login</div>
+            <div class="tab" id="admin-tab">Admin Login</div>
+        </div>
+        
+        <div class="form-container">
+            <form id="login-form">
+                <div class="form-group">
+                    <label id="identifier-label">Roll Number</label>
+                    <input type="text" id="identifier" name="identifier" required>
+                </div>
+                
+                <div class="form-group password-field" id="password-group">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <button type="submit" id="login-btn">Login</button>
+                
+                <div class="error-message" id="error-message"></div>
+                <div class="success-message" id="success-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

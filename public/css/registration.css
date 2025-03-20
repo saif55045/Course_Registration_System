@@ -1,0 +1,268 @@
+:root {
+    /* Primary Colors */
+    --primary: #182848;
+    --primary-light: #4b6cb7;
+
+    /* Secondary Colors */
+    --secondary: #2ecc71;
+    --secondary-light: #5cd68d;
+
+    /* Danger Colors */
+    --danger: #e74c3c;
+    --danger-light: #ed7669;
+
+    /* Neutral Colors */
+    --dark: #34495e;
+    --light: #f8f9fa;
+    --gray: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #f5f5f5;
+    color: white;
+    padding: 25px 0;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+button {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #182848;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    font-weight: 500;
+    color: #182848;
+}
+
+/* button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+} */
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+}
+
+.btn-success {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: var(--secondary-light);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-light);
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.courses-container,
+.registered-container {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.course-card,
+.registered-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    position: relative;
+}
+
+.registered-card {
+    border-left: 4px solid var(--secondary);
+}
+
+.course-title {
+    font-weight: bold;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.course-details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.seats-available {
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+.seats-available span {
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.seats-available.low span {
+    color: var(--danger);
+}
+
+.action-btn {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.error-message,
+.success-message {
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.success-message {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.hidden {
+    display: none;
+}
+
+.schedule-details {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #777;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: var(--gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+}
+
+.student-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: auto;
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
