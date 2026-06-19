@@ -146,3 +146,16 @@ node server.js
 ## License
 
 This project is part of academic coursework and is not licensed for commercial use.
+
+
+## 🖼️ Screenshots
+
+![Screenshot](assets/Screenshot%202026-06-18%20212149.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212336.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212424.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212517.png)
+
+
