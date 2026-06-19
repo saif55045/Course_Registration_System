@@ -1,6 +1,18 @@
-# Course Registration System
+﻿# Course Registration System
 
 A comprehensive web-based course registration system built with Node.js, Express, MongoDB, and vanilla JavaScript that allows students to register for courses and administrators to manage course offerings.
+
+
+## ðŸ–¼ï¸ Screenshots
+
+![Screenshot](assets/Screenshot%202026-06-18%20212149.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212336.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212424.png)
+
+![Screenshot](assets/Screenshot%202026-06-18%20212517.png)
+
 
 ## Features
 
@@ -157,5 +169,3 @@ This project is part of academic coursework and is not licensed for commercial u
 ![Screenshot](assets/Screenshot%202026-06-18%20212424.png)
 
 ![Screenshot](assets/Screenshot%202026-06-18%20212517.png)
-
-
